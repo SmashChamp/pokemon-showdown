@@ -265,7 +265,7 @@ exports.nothrottle = false;
 /**
  * Removes all ip-based alt checking.
  */
-exports.noipchecks = false;
+exports.noipchecks = true;
 
 /**
  * allow punishmentmonitor to lock users with multiple roombans.
