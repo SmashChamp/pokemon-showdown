@@ -2104,6 +2104,19 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 796,
 		gen: 7,
 	},
+	goodraite: {
+		name: "Goodraite",
+		spritenum: 575,
+		megaStone: "Goodra-Mega",
+		megaEvolves: "Goodra",
+		itemUser: ["Goodra"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 1300,
+		gen: 8,
+	},
 	grassgem: {
 		name: "Grass Gem",
 		spritenum: 172,
