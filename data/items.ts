@@ -263,6 +263,26 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 153,
 		gen: 3,
 	},
+	assaultarmor: {
+		name: "Assault Armor",
+		spritenum: 581,
+		fling: {
+			basePower: 80,
+		},
+		onModifyDefPriority: 1,
+		onModifyDef(def) {
+			return this.chainModify(1.5);
+		},
+		onDisableMove(pokemon) {
+			for (const moveSlot of pokemon.moveSlots) {
+				if (this.dex.getMove(moveSlot.move).category === 'Status') {
+					pokemon.disableMove(moveSlot.id);
+				}
+			}
+		},
+		num: 1301,
+		gen: 8,
+	},
 	assaultvest: {
 		name: "Assault Vest",
 		spritenum: 581,
@@ -6873,7 +6893,6 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 0,
 		gen: 2,
-		isNonstandard: "Past",
 	},
 	berry: {
 		name: "Berry",
@@ -7136,6 +7155,48 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 151,
 		gen: 2,
 		isNonstandard: "Past",
+	},
+	
+	// New Items
+	evocharm: {
+		name: "Evo Charm",
+		spritenum: 251,
+		fling: {
+			basePower: 30,
+		},
+		onModifyAtkPriority: 1,
+		onModifyAtk(atk, pokemon) {
+			if (pokemon.baseSpecies.baseSpecies === 'Eevee') {
+				return this.chainModify(2);
+			}
+		},
+		onModifyDefPriority: 1,
+		onModifyAtk(atk, pokemon) {
+			if (pokemon.baseSpecies.baseSpecies === 'Eevee') {
+				return this.chainModify(2);
+			}
+		},
+		onModifySpAPriority: 1,
+		onModifySpA(spa, pokemon) {
+			if (pokemon.baseSpecies.baseSpecies === 'Eevee') {
+				return this.chainModify(2);
+			}
+		},
+		onModifySpdriority: 1,
+		onModifySpd(atk, pokemon) {
+			if (pokemon.baseSpecies.baseSpecies === 'Eevee') {
+				return this.chainModify(2);
+			}
+		},
+		onModifySpePriority: 1,
+		onModifySpe(atk, pokemon) {
+			if (pokemon.baseSpecies.baseSpecies === 'Eevee') {
+				return this.chainModify(2);
+			}
+		},
+		itemUser: ["Pikachu"],
+		num: 1302,
+		gen: 2,
 	},
 
 	// CAP items
