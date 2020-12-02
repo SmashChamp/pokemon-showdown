@@ -11624,7 +11624,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		baseForme: "M",
 		types: ["Psychic"],
 		gender: "M",
-		baseStats: {hp: 74, atk: 48, def: 76, spa: 113, spd: 101, spe: 11s4},
+		baseStats: {hp: 74, atk: 48, def: 76, spa: 113, spd: 101, spe: 114},
 		abilities: {0: "Keen Eye", 1: "Infiltrator", H: "Prankster"},
 		heightm: 0.6,
 		weightkg: 8.5,
