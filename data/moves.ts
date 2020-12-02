@@ -11170,7 +11170,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		boosts: {
 			evasion: 2,
 			def: -1,
-			spd: -1;
+			spd: -1,
 		},
 		secondary: null,
 		target: "self",
